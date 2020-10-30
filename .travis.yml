@@ -1,5 +1,6 @@
 language: python
 script:
   - echo 'hi'
-  - sleep 900
+  - sleep 900 &
+  - while [ -e /proc/$! ]; do echo -n '\u200b'  && sleep 30; done
   - echo 'bye'
