@@ -1,6 +1,7 @@
 language: python
+install:
+  - pip install -r requirements.txt
 script:
-  - echo 'hi'
-  - sleep 900 &
+  - python -m pytest -sv &
   - while [ -e /proc/$! ]; do echo -n '\u200b'  && sleep 30; done
-  - echo 'bye'
+
