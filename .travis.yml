@@ -1,0 +1,7 @@
+language: python
+dist: focal
+matrix:
+    include:
+        script:
+          - |
+              echo "hi"
