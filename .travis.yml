@@ -3,5 +3,5 @@ install:
   - pip install -r requirements.txt
 script:
   - python -m pytest -sv &
-  - while [ -e /proc/$! ]; do echo -n '.' && sleep 30; done
+  - while [ -e /proc/$! ]; do SECONDS=0; if [ "$SECONDS" -gt 570 ]; then  echo -n '.'; SECONDS=0; fi; sleep 30; done
 
