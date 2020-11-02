@@ -4,9 +4,9 @@ install:
 script:
   - python -m pytest -sv &
   - |
+    SECONDS=0
     while [ -e /proc/$! ]; do
-      SECONDS=0
-      if [ "$SECONDS" -gt "550" ]; then
+      if [ "$SECONDS" -gt "570" ]; then
         echo -n '.'
         SECONDS=0
       fi
